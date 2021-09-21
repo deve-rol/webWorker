@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WebWorkers</title>
+    <style>
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            font-family: sans-serif;
+        }
+        .wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 60px 0 20px;
+        }
+        input {
+            margin-right: 10px;
+        }
+        .web-worker,
+        .lazy-load {
+            display: flex;
+            align-items: center;
+            margin-left: 40px;
+        }
+        .web-worker {
+            margin-left: 10px;
+        }
+        .web-worker *,
+        .lazy-load * {
+            cursor: pointer;
+        }
+        #output {
+            width: 50%;
+            text-align: justify;
+            line-height: 26px;
+        }
+        #progress {
+            width: 50%;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+<div class="wrapper">
+    <input type="number" id="number" placeholder="Enter number"/>
+    <button id="submit-btn">Submit</button>
+
+    <div class="lazy-load">
+        <input type="checkbox" id="lazy-load-checkbox">
+        <label for="lazy-load-checkbox">Enable lazy load</label>
+    </div>
+    <div class="web-worker">
+        <input type="checkbox" id="web-worker-checkbox" checked>
+        <label for="web-worker-checkbox">Enable Web Worker</label>
+    </div>
+</div>
+
+
+<h3 id="progress"></h3>
+<div id="output"></div>
+
+<script src="methods.js"></script>
+<script src="workers.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
